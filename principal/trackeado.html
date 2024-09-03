@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Envío</title>
+    <link rel="stylesheet" href="css/styleTrackeado.css">
+</head>
+<body>
+    <header>
+        <a href="#"><img id="logo" src="css/img/logo.png" alt="Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="#">Página Principal</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section>
+            <h2>Detalles del Envío</h2>
+            <div th:if="${envios != null}" id="infoNoNull">
+                <p class="info" id="info1"><strong>ID:</strong> <span th:text="${envios.id}"></span></p>
+                <hr>
+                <p class="info" id="info2"><strong>Origen:</strong> <span th:text="${envios.origen}"></span></p>
+                <hr>
+                <p class="info" id="info3"><strong>Destino:</strong> <span th:text="${envios.destino}"></span></p>
+            </div>
+            <div th:if="${envios == null}" id="infoNull">
+                <p>No se encontró el envío con el ID proporcionado</p>
+            </div>
+            <a id="btn" href="/tracker" class="btn btn-primary">Volver</a>
+        </section>
+    </div>
+    <footer>
+        <div class="imagenes">
+            <a href="#" class="enlace"><img src="css/img/instagram-white.png" class="imagen" alt="Instagram"></a>
+            <a href="#" class="enlace"><img src="css/img/x-white.png" class="imagen" alt="X"></a>
+            <a href="#" class="enlace"><img src="css/img/tiktok-white.png" class="imagen" alt="TikTok"></a>
+        </div>
+        <div class="linea"></div>
+        <p id="copy">© 2024 - Todos los derechos reservados</p>        
+    </footer>
+</body>
+</html>
